@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chutki Restaurant | Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.cdnfonts.com/css/black-jack" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="nav-items">
+                <h1>Our Menu</h1>
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +1-234-567-890</span>  <br>
+                <span><i class="fas fa-envelope"></i> info@restaurant.com</span>
+            </div>
+        </div>
+        <br>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <div class="cart-icon">
+                <a href="#" onclick="openCart()">
+                    <img src="Images/cart.png" alt="Cart">
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+            
+        </nav>
+    </header>
+    
+    <main>
+        <div class="menu-categories">
+            <!-- Appetizers -->
+            <div class="menu-category">
+                <h3>Appetizers</h3>
+                <ul>
+                    <li>
+                        <img src="Images/samosa.jpeg" alt="Samosa">
+                        <div>
+                            <span>Samosa</span>
+                            <span class="price">15 Rs</span>
+                            <button onclick="addToCart('Samosa', 15)">Add to Cart</button>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="Images/pakora.jpeg" alt="Pakora">
+                        <div>
+                            <span>Pakora</span>
+                            <span class="price">25 Rs</span>
+                            <button onclick="addToCart('Pakora', 25)">Add to Cart</button>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="Images/paneer_tikka.jpeg" alt="Paneer Tikka">
+                        <div>
+                            <span>Paneer Tikka</span>
+                            <span class="price">70 Rs</span>
+                            <button onclick="addToCart('Paneer Tikka', 70)">Add to Cart</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Main Courses -->
+            <div class="menu-category">
+                <h3>Main Courses</h3>
+                <ul>
+                    <li>
+                        <img src="Images/butter_chicken.jpeg" alt="Butter Chicken">
+                        <div>
+                            <span>Butter Chicken</span>
+                            <span class="price">160 Rs</span>
+                            <button onclick="addToCart('Butter Chicken', 160)">Add to Cart</button>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="Images/biryani.jpeg" alt="Biryani">
+                        <div>
+                            <span>Biryani</span>
+                            <span class="price">140 Rs</span>
+                            <button onclick="addToCart('Biryani', 140)">Add to Cart</button>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="Images/naan.jpeg" alt="Naan">
+                        <div>
+                            <span>Garlic Naan</span>
+                            <span class="price">12 Rs</span>
+                            <button onclick="addToCart('Garlic Naan', 12)">Add to Cart</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Desserts -->
+            <div class="menu-category">
+                <h3>Desserts</h3>
+                <ul>
+                    <li>
+                        <img src="Images/gulab_jamun.jpeg" alt="Gulab Jamun">
+                        <div>
+                            <span>Gulab Jamun</span>
+                            <span class="price">15 Rs</span>
+                            <button onclick="addToCart('Gulab Jamun', 15)">Add to Cart</button>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="Images/ras_malai.jpeg" alt="Rasmalai">
+                        <div>
+                            <span>Rasmalai</span>
+                            <span class="price">30 Rs</span>
+                            <button onclick="addToCart('Rasmalai', 30)">Add to Cart</button>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="Images/kulfi.jpeg" alt="Kulfi">
+                        <div>
+                            <span>Kulfi</span>
+                            <span class="price">40 Rs</span>
+                            <button onclick="addToCart('Kulfi', 40)">Add to Cart</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Beverages -->
+            <div class="menu-category">
+                <h3>Beverages</h3>
+                <ul>
+                    <li>
+                        <img src="Images/masala_chai.jpeg" alt="Masala Chai">
+                        <div>
+                            <span>Masala Chai</span>
+                            <span class="price">15 Rs</span>
+                            <button onclick="addToCart('Masala Chai', 15)">Add to Cart</button>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="Images/lassi.jpeg" alt="Lassi">
+                        <div>
+                            <span>Mango Lassi</span>
+                            <span class="price">50 Rs</span>
+                            <button onclick="addToCart('Mango Lassi', 50)">Add to Cart</button>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="Images/coffee.jpeg" alt="Filter Coffee">
+                        <div>
+                            <span>Filter Coffee</span>
+                            <span class="price">20 Rs</span>
+                            <button onclick="addToCart('Filter Coffee', 20)">Add to Cart</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total">0.00 Rs</span></p>
+            </div>
+            <button onclick="checkout()">Checkout</button>
+            <button onclick="closeCart()">Close</button>
+        </div>
+    </div>
+    <div id="checkout-form" class="checkout-form">
+        <h2>Checkout</h2>
+        <form>
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+           
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+           
+            <label>Delivery Options:</label>
+            <div>
+                <input type="radio" id="delivery" name="delivery" value="Delivery" checked>
+                <label for="delivery">Delivery</label>
+            </div>
+            <div>
+                <input type="radio" id="pickup" name="delivery" value="Pickup">
+                <label for="pickup">Pickup</label>
+            </div>
+           
+            <button type="submit">Confirm Order</button>
+            <button type="button" onclick="closeCheckout()">Cancel</button>
+        </form>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Chutki Restaurant. All Rights reserved.</p>
+    </footer>
+    <script src="javascript/script.js"></script>
+</body>
+</html>
