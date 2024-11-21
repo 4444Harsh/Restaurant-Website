@@ -43,6 +43,9 @@ function validateEmail(email) {
 }
 
 let cart = [];
+if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"))
+}
 let total = 0;
 
 
@@ -66,6 +69,7 @@ function addToCart(itemName, itemPrice) {
     } else {
         cart.push({ name: itemName, price: itemPrice, quantity: 1 });
     }
+    localStorage.setItem("cart",JSON.stringify(cart));
     updateCartCount();
     updateCartTotal();
     displayCartItems();
@@ -75,6 +79,7 @@ function increaseQuantity(itemName){
     const item = cart.find(item => item.name === itemName);
     if(item){
         item.quantity++;
+        localStorage.setItem("cart",JSON.stringify(cart))
         updateCartCount();
         updateCartTotal();
         displayCartItems();
@@ -84,6 +89,7 @@ function decreaseQuantity(itemName){
     const item = cart.find(item => item.name === itemName);
     if(item){
         item.quantity--;
+        localStorage.setItem("cart",JSON.stringify(cart))
         if(item.quantity === 0){
             cart = cart.filter(cartItem => cartItem.name !== itemName);
         }
@@ -98,7 +104,9 @@ function removeFromCart(itemName){
         cart[itemIndex].quantity--;
         if (cart[itemIndex].quantity === 0){
             cart.splice(itemIndex, 1);
+            console.log(cart)
         }
+        localStorage.setItem("cart",JSON.stringify(cart))
     }
     updateCartCount();
     updateCartTotal();
@@ -114,6 +122,7 @@ function displayCartItems() {
         return;
     }
     cart.forEach(item => {
+        console.log(item)
         cartItemsDiv.innerHTML += `
             <div class="cart-item">
                 <p>${item.name} - ${item.price.toFixed(2)} x ${item.quantity}</p>
@@ -132,21 +141,15 @@ function displayCartItems() {
 function updateCartCount() {
     let itemsCount = cart.reduce((sum, item) => sum + item.quantity, 0)
     document.getElementById('cart-count').innerText = itemsCount;
-    // localStorage.setItem("itemsCount",itemsCount)
-    // console.log(itemsCount)
 }
-
-// function fetchItemsCount() {
-//     document.getElementById('cart-count').innerText = localStorage.getItem("itemsCount")
-// }
-
-// fetchItemsCount()
+updateCartCount();
 
 // Update Cart Total
 function updateCartTotal() {
-    total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     document.getElementById('cart-total').innerText = `${total.toFixed(2)} Rs`;
 }
+updateCartTotal()
 
 // Checkout
 function checkout() {
@@ -157,4 +160,9 @@ function checkout() {
 // Close Checkout Form
 function closeCheckout() {
     document.getElementById('checkout-form').style.display = 'none';
+}
+
+function placeOrder() {
+   localStorage.removeItem("cart");
+   cart = [];
 }

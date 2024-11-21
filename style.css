@@ -73,9 +73,21 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
-    
+    padding-right: 18px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    position: relative;
 }
 
 nav a {
@@ -384,8 +396,9 @@ footer {
 }
 .cart-icon {
     margin-left: auto;
-    position: relative;
-    display: table;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
 
 .cart-icon img {

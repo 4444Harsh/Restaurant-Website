@@ -27,10 +27,12 @@
         </div>
         <br>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
             <div class="cart-icon">
                 <a href="#" onclick="openCart()">
                     <img src="Images/cart.png" alt="Cart">
@@ -155,7 +157,7 @@
                     </li>
                     <li>
                         <img src="Images/coffee.jpeg" alt="Filter Coffee">
-                        <div>
+                        <div id="">
                             <span>Filter Coffee</span>
                             <span class="price">20 Rs</span>
                             <button onclick="addToCart('Filter Coffee', 20)">Add to Cart</button>
@@ -190,12 +192,13 @@
                 <input type="radio" id="delivery" name="delivery" value="Delivery" checked>
                 <label for="delivery">Delivery</label>
             </div>
+
             <div>
                 <input type="radio" id="pickup" name="delivery" value="Pickup">
                 <label for="pickup">Pickup</label>
             </div>
            
-            <button type="submit">Confirm Order</button>
+            <button type="submit" onclick="placeOrder()">Confirm Order</button>
             <button type="button" onclick="closeCheckout()">Cancel</button>
         </form>
     </div>
